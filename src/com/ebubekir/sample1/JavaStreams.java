@@ -1,4 +1,4 @@
-package com.ebubekir;
+package com.ebubekir.sample1;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -64,7 +64,7 @@ public class JavaStreams {
         System.out.println();
 
         // 8. Stream rows from text file, sort, filter, and print
-        Stream<String> bands = Files.lines(Paths.get("src/com/ebubekir/bands.txt"));
+        Stream<String> bands = Files.lines(Paths.get("src/com/ebubekir/sample1/bands.txt"));
         bands
                 .sorted()
                 .filter(x -> x.length() > 13)
@@ -73,14 +73,14 @@ public class JavaStreams {
         System.out.println();
 
         // 9. Stream rows from text file and save to List
-        List<String> bands2 = Files.lines(Paths.get("src/com/ebubekir/bands.txt"))
+        List<String> bands2 = Files.lines(Paths.get("src/com/ebubekir/sample1/bands.txt"))
                 .filter(x -> x.contains("jit"))
                 .collect(Collectors.toList());
         bands2.forEach(x -> System.out.println(x));
         System.out.println();
 
         // 10. Stream rows from CSV file and count
-        Stream<String> rows1 = Files.lines(Paths.get("src/com/ebubekir/data.txt"));
+        Stream<String> rows1 = Files.lines(Paths.get("src/com/ebubekir/sample1/data.txt"));
         int rowCount = (int)rows1
                 .map(x -> x.split(","))
                 .filter(x -> x.length == 3)
@@ -90,7 +90,7 @@ public class JavaStreams {
         System.out.println();
 
         // 11. Stream rows from CSV file, parse data from rows
-        Stream<String> rows2 = Files.lines(Paths.get("src/com/ebubekir/data.txt"));
+        Stream<String> rows2 = Files.lines(Paths.get("src/com/ebubekir/sample1/data.txt"));
         rows2
                 .map(x -> x.split(","))
                 .filter(x -> x.length == 3)
@@ -100,7 +100,7 @@ public class JavaStreams {
         System.out.println();
 
         // 12. Stream rows from CSV file, store fields in HashMap
-        Stream<String> rows3 = Files.lines(Paths.get("src/com/ebubekir/data.txt"));
+        Stream<String> rows3 = Files.lines(Paths.get("src/com/ebubekir/sample1/data.txt"));
         Map<String, Integer> map = new HashMap<>();
         map = rows3
                 .map(x -> x.split(","))
