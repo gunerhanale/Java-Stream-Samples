@@ -8,7 +8,6 @@ public class Main {
     public static void main(String[] args) {
         List<Person> people = getPeople();
 
-
         // Imperative approach ❌
     /*
     List<Person> females = new ArrayList<>();
@@ -75,6 +74,11 @@ public class Main {
             people1.forEach(System.out::println);
             System.out.println();
         });
+        for (Enum gender :  groupByGender.keySet()){
+            System.out.println(gender);
+            groupByGender.get(gender).forEach(System.out::println);
+            System.out.println();
+        }
         System.out.println();
 
 
