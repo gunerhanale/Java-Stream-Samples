@@ -47,6 +47,7 @@ public class Main {
         String email = person.getEmail().map(String::toLowerCase).orElse("email not provided");
         System.out.println(email);
 
+        person = new Person("james", null);
         if(person.getEmail().isPresent()){
             email = person.getEmail().get();
             System.out.println(email.toLowerCase());
